@@ -100,5 +100,66 @@
     ctx.strokeText("Hello World",10,50);
     </script>
   </div>
+  <div class="container">
+    <h1>Linear Gradient Example</h1>
+    <canvas id="linearGradientCanvas" width="200" height="100"
+    style="border:1px solid #000000">
+    </canvas>
+    <script>
+    var c = document.getElementById("linearGradientCanvas");
+    var ctx = c.getContext("2d");
+
+    //create a gradient
+    var grd = ctx.createLinearGradient(0,0,200,0);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+
+    //fill with gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(10,10,150,80);
+    </script>
+  </div>
+
+  <div class="container">
+    <h1>Circular Gradient Example</h1>
+    <canvas id="circGradientCanvas" width="200" height="100"
+    style="border:1px solid #000000">
+    </canvas>
+    <script>
+    var c = document.getElementById("circGradientCanvas");
+    var ctx = c.getContext("2d");
+    //create gradient
+    var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+
+    //fill with gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(10,10,150,80);
+    </script>
+  </div>
+
+  <div class="container">
+    <h1>Draw Image Example</h1>
+    <p>Image to use:</p>
+    <img id="scream" src="img_the_scream.jpg"
+    alt="The Scream" width="220" height="277">
+    <p>Canvas to fill:</p>
+    <canvas id="imageFillCanvas" width="250" height="300"
+    style="border:1px solid #d3d3d3">
+    Your browser does not support the HTML5 canvas tag.
+    </canvas>
+    <p>
+      <button onclick="renderImageCanvas()">Try It</button>
+    </p>
+    <script>
+    function renderImageCanvas(){
+      var c = document.getElementById("imageFillCanvas");
+      var ctx = c.getContext("2d");
+      var img = document.getElementById("scream");
+      ctx.drawImage(img,10,10);
+    }
+    </script>
+  </div>
 </body>
 </html>
