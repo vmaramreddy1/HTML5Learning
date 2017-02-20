@@ -49,5 +49,19 @@
       </canvas>
     </p>
   </div>
+  <div class="container">
+    <h1>Draw a Line Example</h1>
+    <canvas id="lineCanvas" width="200" height="100"
+      style="border:1px solid #000000;">
+    </canvas>
+    <script>
+    var c = window.document.getElementById("lineCanvas");
+    //javascript context object is a container that holds the graphics contents.
+    var ctx = c.getContext("2d");
+    ctx.moveTo(0,0);
+    ctx.lineTo(200,100);
+    ctx.stroke();
+    </script>
+  </div>
 </body>
 </html>
